@@ -1,3 +1,5 @@
+@primary: #2980b9;
+
 html,
 body {
     margin: 0;
@@ -63,6 +65,7 @@ h1 {
     ul {
         border: 1px solid gray;
         cursor: pointer;
+
         //        margin-top: 3px;
         position: absolute;
         visibility: hidden;
@@ -87,6 +90,7 @@ h1 {
         }
 
         li {
+            width: 100%;
             padding: 7px;
             border-bottom: 1px solid #eee;
             background-color: aliceblue;
@@ -96,34 +100,64 @@ h1 {
     }
 }
 
-.tabs {
 
-    ul {
-        margin-top: 10px;
-        border-bottom: 1px solid gray;
-        cursor: pointer;
-        user-select: none;
+.tab-container {
+    border: 1px solid gray;
+    border-radius: 3px;
+    padding: 5px;
+    box-shadow: 5px 9px 22px -9px #808080;
 
-        li {
-            border: 1px solid gray;
-            padding-left: 5px;
-            padding-right: 5px;
-            padding-top: 5px;
-            //            border-radius: 5px;
-            //            padding: 3px;
-            display: inline;
 
-            &:first-child {
-                margin-left: 10px;
+    .tabs {
+
+        ul {
+            margin-top: 10px;
+            border-bottom: 1px solid #eee;
+            cursor: pointer;
+            user-select: none;
+
+            li {
+                border: 1px solid #eee;
+                padding-left: 5px;
+                padding-right: 5px;
+                padding-top: 5px;
+                //            border-radius: 5px;
+                //            padding: 3px;
+                display: inline;
+
+                &:first-child {
+                    margin-left: 10px;
+                }
+            }
+
+            .active-tab {
+                box-shadow: 6px -10px 20px -9px #000000;
+                background-color: @primary;
+                color: white;
+                border-bottom: none;
             }
         }
-
-        .active {
-            background-color: darkcyan;
-            color: white;
-        }
     }
+
+    .content {
+        position: relative;
+
+        p {
+            visibility: hidden;
+        }
+
+        p.active-p {
+            //            border: 1px solid red;
+            position: absolute;
+            top: 10px;
+            visibility: visible;
+        }
+
+    }
+
+
 }
+
 
 .num {
     color: red;

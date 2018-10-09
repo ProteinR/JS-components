@@ -70,29 +70,49 @@ h1 {
   border: 1px solid #eee;
 }
 .dropdown ul li {
+  width: 100%;
   padding: 7px;
   border-bottom: 1px solid #eee;
   background-color: aliceblue;
 }
-.tabs ul {
+.tab-container {
+  border: 1px solid gray;
+  border-radius: 3px;
+  padding: 5px;
+  box-shadow: 5px 9px 22px -9px #808080;
+}
+.tab-container .tabs ul {
   margin-top: 10px;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid #eee;
   cursor: pointer;
   user-select: none;
 }
-.tabs ul li {
-  border: 1px solid gray;
+.tab-container .tabs ul li {
+  border: 1px solid #eee;
   padding-left: 5px;
   padding-right: 5px;
   padding-top: 5px;
   display: inline;
 }
-.tabs ul li:first-child {
+.tab-container .tabs ul li:first-child {
   margin-left: 10px;
 }
-.tabs ul .active {
-  background-color: darkcyan;
+.tab-container .tabs ul .active-tab {
+  box-shadow: 6px -10px 20px -9px #000000;
+  background-color: #2980b9;
   color: white;
+  border-bottom: none;
+}
+.tab-container .content {
+  position: relative;
+}
+.tab-container .content p {
+  visibility: hidden;
+}
+.tab-container .content p.active-p {
+  position: absolute;
+  top: 10px;
+  visibility: visible;
 }
 .num {
   color: red;
