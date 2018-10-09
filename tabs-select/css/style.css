@@ -24,7 +24,6 @@ input {
   -webkit-appearance: none;
   -moz-appearance: none;
   font-size: 13px;
-  color: #000;
   font-family: "Tahoma";
   font-weight: normal;
   list-style: none;
@@ -33,9 +32,15 @@ input {
 body {
   padding: 100px;
 }
+h1 {
+  font-size: 30px;
+  font-family: sans-serif;
+}
 .dropdown {
   padding: 12px 20px;
   display: inline-block;
+  user-select: none;
+  position: relative;
 }
 .dropdown .button-dropdown {
   background-color: #2980b9;
@@ -47,22 +52,47 @@ body {
 }
 .dropdown ul {
   border: 1px solid gray;
+  cursor: pointer;
+  position: absolute;
+  visibility: hidden;
+  display: inline-block;
+  margin-top: 4px;
+}
+.dropdown ul :last-child {
+  border-bottom: none;
+}
+.dropdown ul :hover {
+  background-color: forestgreen;
+  color: white;
+}
+.dropdown ul.active {
+  visibility: visible;
+  border: 1px solid #eee;
 }
 .dropdown ul li {
   padding: 7px;
-  border-bottom: 1px solid gray;
-}
-.dropdown ul li .active {
-  background-color: cornflowerblue;
+  border-bottom: 1px solid #eee;
+  background-color: aliceblue;
 }
 .tabs ul {
+  margin-top: 10px;
   border-bottom: 1px solid gray;
+  cursor: pointer;
+  user-select: none;
 }
 .tabs ul li {
   border: 1px solid gray;
-  border-radius: 5px;
-  padding: 3px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 5px;
   display: inline;
+}
+.tabs ul li:first-child {
+  margin-left: 10px;
+}
+.tabs ul .active {
+  background-color: darkcyan;
+  color: white;
 }
 .num {
   color: red;
