@@ -79,4 +79,26 @@ input {
             transform: rotate(180deg);
         }
     }
+
+    .circles {
+        //        background-color: cornflowerblue;
+        //        height: 10px;
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+
+        .circle {
+            width: 10px;
+            height: 10px;
+            background-color: white;
+            border-radius: 50%;
+            float: left;
+            margin-right: 5px;
+            cursor: pointer;
+
+            &.active {
+                border: 1px solid #FF9191;
+            }
+        }
+    }
 }

@@ -3,9 +3,21 @@ var numImg = 0; //номер листаемого изображения
 var imgCount = $('.slide').length; //кол-во изображений в слайдере
 var maxWidth = imgCount * divWidth; // ширина блока с учетом всех картинок
 
-//var length = 0; //- высчитывает на сколько прокрутить ленту 
-
 console.log('Ширина блока - ' + divWidth + 'px');
+
+for (i = 0; i < imgCount; i++) {
+    //    $('.circle').clone().appendTo('.circles'); //clone не подходит т.к. клонирует свои же клонированные блоки
+    $('.circles').append('<div class="circle" data-img=' + i + '></div>');
+    console.log('Цикл for i= ' + i);
+}
+
+
+$('.circle').click(function () {
+    numImg = $(this).attr('data-img');
+    $('.circle').removeClass('active');
+    $(this).addClass('active');
+    $('.slide-row').css('left', divWidth * numImg * (-1));
+});
 
 
 $('.arrow.arrow-left').click(function () {
@@ -13,11 +25,9 @@ $('.arrow.arrow-left').click(function () {
     if (numImg == -1) {
         numImg = imgCount - 1;
         console.log('numImg = ' + numImg);
-
     }
     $('.slide-row').css('left', divWidth * numImg * (-1));
 });
-
 
 $('.arrow.arrow-right').click(function () {
     numImg++;

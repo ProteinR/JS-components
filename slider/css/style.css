@@ -71,3 +71,20 @@ input {
   right: 0;
   transform: rotate(180deg);
 }
+.slider-container .circles {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+}
+.slider-container .circles .circle {
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+  float: left;
+  margin-right: 5px;
+  cursor: pointer;
+}
+.slider-container .circles .circle.active {
+  border: 1px solid #FF9191;
+}
