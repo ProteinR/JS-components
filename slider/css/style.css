@@ -42,6 +42,7 @@ input {
   left: 0;
   top: 0;
   bottom: 0;
+  transition: all 0.5s ease;
 }
 .slider-container .slide-row .slide {
   height: 100%;
