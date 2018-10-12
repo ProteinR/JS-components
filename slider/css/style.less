@@ -34,39 +34,48 @@ input {
 }
 
 .slider-container {
+    background-color: bisque;
+    height: 400px;
+    width: 100vw;
     position: relative;
-    //    height: 500px;
+    overflow: hidden;
 
     .slide-row {
         position: absolute;
+        width: 10000px;
+        left: 0;
         top: 0;
         bottom: 0;
-        left: 0;
-        width: 10000px;
 
         .slide {
+            height: 100%;
             width: 100vw;
-            height: 400px;
-            float: left;
-            background-position: center;
             background-repeat: no-repeat;
+            background-position: center;
+            float: left;
             background-size: cover;
         }
     }
 
-    .arow {
-        background-image: url(../img/icons/slide-left.svg);
+    .arrow {
+        background-color: rgba(0, 0, 0, 0.3);
         position: absolute;
+        width: 50px;
         top: 0;
         bottom: 0;
+        background-image: url(../img/icons/slide-left.svg);
         background-position: center;
+        background-size: 80%;
         background-repeat: no-repeat;
-        background-size: 40%;
-        width: 50px;
+        cursor: pointer;
 
         &.arrow-left {
             left: 0;
         }
-    }
 
+        &.arrow-right {
+            right: 0;
+            transform: rotate(180deg);
+        }
+    }
 }
