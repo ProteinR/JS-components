@@ -11,7 +11,7 @@ console.log('Ширина блока - ' + divWidth + 'px');
 $('.arrow.arrow-left').click(function () {
     numImg--;
     if (numImg == -1) {
-        numImg = imgCount;
+        numImg = imgCount - 1;
         console.log('numImg = ' + numImg);
 
     }
