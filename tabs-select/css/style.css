@@ -3,7 +3,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  font-family: "Tahoma";
+  font-family: sans-serif, "Tahoma";
 }
 h1,
 h2,
@@ -24,7 +24,7 @@ input {
   -webkit-appearance: none;
   -moz-appearance: none;
   font-size: 13px;
-  font-family: "Tahoma";
+  font-family: sans-serif, "Tahoma";
   font-weight: normal;
   list-style: none;
   text-decoration: none;
@@ -37,7 +37,6 @@ h1 {
   font-family: sans-serif;
 }
 .dropdown {
-  padding: 12px 20px;
   display: inline-block;
   user-select: none;
   position: relative;
@@ -50,8 +49,15 @@ h1 {
   padding: 15px;
   text-align: center;
 }
+.dropdown .button-dropdown i {
+  transform: rotate(360deg);
+}
+.dropdown .button-dropdown .active {
+  transform: rotate(180deg);
+  transition: all 0.5s ease;
+}
 .dropdown ul {
-  border: 1px solid gray;
+  width: 100%;
   cursor: pointer;
   position: absolute;
   visibility: hidden;
@@ -67,49 +73,50 @@ h1 {
 }
 .dropdown ul.active {
   visibility: visible;
-  border: 1px solid #eee;
 }
 .dropdown ul li {
-  width: 100%;
   padding: 7px;
   border-bottom: 1px solid #eee;
   background-color: aliceblue;
 }
 .tab-container {
-  border: 1px solid gray;
   border-radius: 3px;
-  padding: 5px;
+  padding: 10px;
   box-shadow: 5px 9px 22px -9px #808080;
+  min-height: 100px;
 }
 .tab-container .tabs ul {
   margin-top: 10px;
-  border-bottom: 1px solid #eee;
   cursor: pointer;
   user-select: none;
 }
 .tab-container .tabs ul li {
   border: 1px solid #eee;
-  padding-left: 5px;
-  padding-right: 5px;
-  padding-top: 5px;
+  border-right: none;
+  color: darkgray;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
   display: inline;
 }
-.tab-container .tabs ul li:first-child {
+.tab-container .tabs ul li:last-child {
+  border-right: 1px solid #eee;
+}
+.tab-container .tabs ul:first-child {
   margin-left: 10px;
 }
-.tab-container .tabs ul .active-tab {
+.tab-container .tabs .active-tab {
   box-shadow: 6px -10px 20px -9px #000000;
-  background-color: #2980b9;
-  color: white;
+  color: black;
   border-bottom: none;
 }
-.tab-container .content {
+.content {
   position: relative;
 }
-.tab-container .content p {
+.content p {
   visibility: hidden;
 }
-.tab-container .content p.active-p {
+.content p.active-p {
   position: absolute;
   top: 10px;
   visibility: visible;

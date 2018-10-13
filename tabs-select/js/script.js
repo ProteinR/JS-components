@@ -1,9 +1,9 @@
-$('.button-dropdown').on('click', function () {
-    //    alert('click');
-    $('ul').toggleClass('active');
+$('.button-dropdown').on('click', function () { //по клику кнопки вкл/выкл класс
+    $('ul').toggleClass('active'); //выпадающий список
+    $('i').toggleClass('active'); //переворот стрелочки
 });
 
-$('.button-dropdown').blur(function () {
+$('.button-dropdown').blur(function () { //клик вне кнопки скроет список (!не раб)
     alert('blur');
     $('ul').removeClass('active');
 });

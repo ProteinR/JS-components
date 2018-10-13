@@ -4,7 +4,7 @@ html,
 body {
     margin: 0;
     padding: 0;
-    font-family: "Tahoma";
+    font-family: sans-serif, "Tahoma";
 }
 
 h1,
@@ -27,7 +27,7 @@ input {
     -moz-appearance: none;
     font-size: 13px;
     //    color: #000;
-    font-family: "Tahoma";
+    font-family: sans-serif, "Tahoma";
     font-weight: normal;
     list-style: none;
     text-decoration: none;
@@ -44,12 +44,10 @@ h1 {
 
 
 .dropdown {
-    padding: 12px 20px;
+    //    padding: 12px 20px;
     display: inline-block;
     user-select: none;
     position: relative;
-
-    //    border: 2px solid #fafafa;
 
     .button-dropdown {
         background-color: #2980b9;
@@ -58,22 +56,26 @@ h1 {
         border-radius: 2px;
         padding: 15px;
         text-align: center;
-        //        position: relative;
 
+        i {
+            transform: rotate(360deg);
+        }
+
+        .active {
+            transform: rotate(180deg);
+            transition: all 0.5s ease;
+        }
     }
 
     ul {
-        border: 1px solid gray;
+        width: 100%;
         cursor: pointer;
-
-        //        margin-top: 3px;
         position: absolute;
         visibility: hidden;
         display: inline-block;
         margin-top: 4px;
-        //        top: 100%;
-        //        transition: all 0.5s ease;
-        //        transform: translateY(-10px);
+        //        width: 100%;
+        //        transition: fadeInDown 1s ease;
 
         :last-child {
             border-bottom: none;
@@ -86,78 +88,80 @@ h1 {
 
         &.active {
             visibility: visible;
-            border: 1px solid #eee;
         }
 
         li {
-            width: 100%;
+            //            width: 100%;
             padding: 7px;
             border-bottom: 1px solid #eee;
             background-color: aliceblue;
-
-
         }
     }
 }
 
 
 .tab-container {
-    border: 1px solid gray;
+    //    border: 1px solid gray;
     border-radius: 3px;
-    padding: 5px;
+    padding: 10px;
     box-shadow: 5px 9px 22px -9px #808080;
+    min-height: 100px;
+    //    overflow: hidden;
 
 
     .tabs {
 
         ul {
             margin-top: 10px;
-            border-bottom: 1px solid #eee;
+            //            border-bottom: 1px solid #eee;
             cursor: pointer;
             user-select: none;
 
             li {
                 border: 1px solid #eee;
-                padding-left: 5px;
-                padding-right: 5px;
-                padding-top: 5px;
-                //            border-radius: 5px;
-                //            padding: 3px;
+                border-right: none;
+                color: darkgray;
+                padding-left: 10px;
+                padding-right: 10px;
+                padding-top: 10px;
                 display: inline;
 
-                &:first-child {
-                    margin-left: 10px;
+                &:last-child {
+                    border-right: 1px solid #eee;
                 }
+
+                //                ::after {
+                //                    border-bottom: 5px solid black;
+                //                }
+
             }
 
-            .active-tab {
-                box-shadow: 6px -10px 20px -9px #000000;
-                background-color: @primary;
-                color: white;
-                border-bottom: none;
+            &:first-child {
+                margin-left: 10px;
             }
         }
-    }
 
-    .content {
-        position: relative;
-
-        p {
-            visibility: hidden;
+        .active-tab {
+            box-shadow: 6px -10px 20px -9px #000000;
+            color: black;
+            border-bottom: none;
         }
-
-        p.active-p {
-            //            border: 1px solid red;
-            position: absolute;
-            top: 10px;
-            visibility: visible;
-        }
-
     }
-
-
 }
 
+.content {
+    position: relative;
+
+    p {
+        visibility: hidden;
+    }
+
+    p.active-p {
+        position: absolute;
+        top: 10px;
+        visibility: visible;
+    }
+}
 
 .num {
     color: red;

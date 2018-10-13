@@ -34,7 +34,7 @@ $('.arrow.arrow-right').click(function () {
         numImg = 0;
     }
     $('.circle').removeClass('active');
-    $('[data-slide="numImg"]').addClass('active');
+    $('[data-img="numImg"]').addClass('active');
     console.log(numImg);
     //    $activeCircle.addClass('active');
     $('.slide-row').css('left', divWidth * numImg * (-1));
