@@ -32,13 +32,12 @@ input {
 .slider-container {
   background-color: bisque;
   height: 400px;
-  width: 100vw;
+  width: 100%;
   position: relative;
   overflow: hidden;
 }
 .slider-container .slide-row {
   position: absolute;
-  width: 10000px;
   left: 0;
   top: 0;
   bottom: 0;
@@ -46,7 +45,6 @@ input {
 }
 .slider-container .slide-row .slide {
   height: 100%;
-  width: 100vw;
   background-repeat: no-repeat;
   background-position: center;
   float: left;

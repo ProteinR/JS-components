@@ -3,6 +3,9 @@ var numImg = 0; //номер листаемого изображения
 var imgCount = $('.slide').length; //кол-во изображений в слайдере
 var maxWidth = imgCount * divWidth; // ширина блока с учетом всех картинок
 
+$('.slide').css('width', divWidth); // задали ширину картинки равную ширине род. контейнера
+$('.slide-row').css('width', maxWidth + 100 + 'px'); // задали макс.ширину полосы
+
 console.log('Ширина блока - ' + divWidth + 'px');
 
 for (i = 1; i < imgCount; i++) { //генерируем кружки для навигации
