@@ -6,17 +6,14 @@ var maxWidth = imgCount * divWidth; // ширина блока с учетом �
 console.log('Ширина блока - ' + divWidth + 'px');
 
 for (i = 1; i < imgCount; i++) { //генерируем кружки для навигации
-    //    $('.circle').clone().appendTo('.circles'); //clone не подходит т.к. клонирует свои же клонированные блоки
-    $('.circles').append('<div class="circle" data-img=' + i + '></div>');
+    $('.circles').append('<div class="circle" data-img=' + i + ' id=' + i + '></div>');
     console.log('Цикл for i= ' + i);
 }
 
 
 $('.circle').click(function () { //Получаем номер кружка, делаем его активным, листаем на необх. количество экранов ленту
     numImg = $(this).attr('data-img');
-    $('.circle').removeClass('active');
-    $(this).addClass('active');
-    $('.slide-row').css('left', divWidth * numImg * (-1));
+    slide(numImg);
 });
 
 $('.arrow.arrow-left').click(function () {
@@ -25,7 +22,7 @@ $('.arrow.arrow-left').click(function () {
         numImg = imgCount - 1;
         console.log('numImg = ' + numImg);
     }
-    $('.slide-row').css('left', divWidth * numImg * (-1));
+    slide(numImg);
 });
 
 $('.arrow.arrow-right').click(function () {
@@ -33,9 +30,12 @@ $('.arrow.arrow-right').click(function () {
     if (numImg >= imgCount) {
         numImg = 0;
     }
-    $('.circle').removeClass('active');
-    $('[data-slide="numImg"]').addClass('active');
-    console.log(numImg);
-    //    $activeCircle.addClass('active');
-    $('.slide-row').css('left', divWidth * numImg * (-1));
+    slide(numImg);
 });
+
+
+function slide(numImg) { //листаем ленту и подсвечиваем кружок
+    $('.slide-row').css('left', divWidth * numImg * (-1));
+    $('.circle').removeClass('active');
+    $('#' + numImg).addClass('active');
+};
