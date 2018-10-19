@@ -7,8 +7,6 @@ $('.accordion-container .accordion-section').click(function () {
         $lastSection.toggleClass('active'); //закрываем последнюю
         show($curentsection); // открываем нужную
     }
-
-
 });
 
 function show($curentsection) {

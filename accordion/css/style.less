@@ -27,17 +27,47 @@ input {
     -moz-appearance: none;
     font-size: 13px;
     //    color: #000;
-    font-family: sans-serif, "Tahoma";
-    font-weight: normal;
+    font-family: roboto, sans-serif, "Tahoma";
+    color: #fff;
+    font-weight: 300;
+    font-size: 1.5rem;
     list-style: none;
     text-decoration: none;
 }
 
+body {
+    height: 100vh;
+}
+
+.main-content {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg);
+    background-size: cover;
+    background-position: center;
+
+    .dark-block {
+        display: flex;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .7);
+    }
+}
+
 .accordion-container {
-    width: 400px;
-    border: 1px solid gray;
+
+    width: 578px;
+    //    border: 1px solid gray;
 
     .accordion-section {
+        margin-bottom: 15px;
 
         // у последнего тайтла убрать бордер
         //        :last-child {
@@ -46,43 +76,46 @@ input {
 
 
         .title {
-            background-color: #ebebeb;
+            padding-left: 15px;
+            background-color: #f44336;
             color: black;
             cursor: pointer;
-            height: 30px;
+            height: 50px;
             user-select: none;
-            border-bottom: 1px solid gray;
+            display: flex;
+            box-shadow: 0 5px 11px 0 rgba(0, 0, 0, .18), 0 4px 15px 0 rgba(0, 0, 0, .15);
+
+            &:hover {
+                background-color: #626262;
+            }
+
+            span {
+                align-self: center;
+            }
         }
 
         .content {
-            transition: all 1s ease;
-            //            visibility: hidden;
-            //            padding: 15px;
-            overflow: hidden;
-            height: 0;
-            transition: all 1s ease;
-            //            display: none;
+            overflow: auto;
+            max-height: 0;
+            transition: all 1s linear;
+            background-color: rgba(0, 0, 0, .3);
+            box-shadow: 0 5px 11px 0 rgba(0, 0, 0, .18), 0 4px 15px 0 rgba(0, 0, 0, .15);
 
             p {
                 padding: 15px;
-
+                font-size: 1rem;
             }
-
         }
 
         &.active {
-            transition: all 1s ease;
+            .title {
+                background-color: @primary;
+                color: white;
+            }
 
             .content {
-                transition: height 3s, padding .5s;
-
-                //                transition: all 1s ease;
-                height: auto;
-                //                opacity: 1;
-                //                visibility: visible;
-                //                height: 200px;
-                //                display: block;
-
+                max-height: 700px;
+                //                    height: auto;
             }
         }
     }
