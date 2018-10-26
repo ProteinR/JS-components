@@ -40,8 +40,89 @@ body {
 }
 
 .range-container {
+    margin: 150px;
+    position: relative;
+    display: inline-block;
+
     input[type=range] {
+        width: 270px;
+        appearance: none;
         -webkit-appearance: none;
-        background-color: gray;
+        -moz-appearance: none;
+        height: 5px;
+        background-color: #ededed;
+        border: none;
+        outline: none;
+
+        &::-webkit-slider-thumb {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            height: 15px;
+            width: 15px;
+            background-color: @primary;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        //        &:before {
+        //            content: attr(min);
+        //            background-color: none;
+        //            color: @primary;
+        //            font-size: 14px;
+        //        }
+        //
+        //        &:after {
+        //            content: attr(max);
+        //            color: @primary;
+        //            font-size: 14px;
+        //        }
+    }
+
+
+    .current-value {
+
+        //        span {
+        //            font-size: 14px;
+        //            position: relative;
+        //            background-color: rgba(0, 0, 0, 0.5);
+        //            border-radius: 4px;
+        //            padding: 5px;
+        //            left: 70%;
+        //        }
+
+        .val {
+            display: inline;
+            position: relative;
+            left: 70%;
+
+            span {
+                font-size: 14px;
+                text-align: center;
+                position: relative;
+                background-color: rgb(137, 137, 137);
+                border-radius: 4px;
+                padding: 5px;
+                overflow: hidden;
+                width: 10px;
+                height: 10px;
+            }
+
+            .arrow {
+                display: inline-block;
+                position: relative;
+                border: 1px solid rgb(137, 137, 137);
+                background-color: rgb(137, 137, 137);
+                border-left: none;
+                border-top: none;
+                transform: rotate(45deg);
+                width: 9px;
+                height: 9px;
+                left: -23px;
+                bottom: -12px;
+            }
+        }
+
+
     }
 }

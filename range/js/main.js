@@ -1,15 +1,15 @@
-var $lastSection = $('.accordion-section:first'); //по дефолту открыта первая
+var arrow = $('.arrow');
 
-$('.accordion-container .accordion-section').click(function () {
-    $curentsection = $(this); //записали текущую вкладку по которой кликнули
+$('input[type="range"]').mousemove(function () {
+    var rangeVal = $('input[type="range"]').val();
 
-    if (!($curentsection == $lastSection)) { //если не совпадает с последней открытой
-        $lastSection.toggleClass('active'); //закрываем последнюю
-        show($curentsection); // открываем нужную
+
+    $('.current-value > .val > span').html(rangeVal);
+    $('.current-value > .val').css('left', rangeVal - 5 + '%');
+
+    if (rangeVal < 10) {
+        arrow.css('left', '-19px');
+    } else {
+        arrow.css('left', '-23px');
     }
 });
-
-function show($curentsection) {
-    $curentsection.addClass('active');
-    $lastSection = $curentsection;
-}

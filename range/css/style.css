@@ -34,7 +34,57 @@ input {
 body {
   height: 100vh;
 }
+.range-container {
+  margin: 150px;
+  position: relative;
+  display: inline-block;
+}
 .range-container input[type=range] {
+  width: 270px;
+  appearance: none;
   -webkit-appearance: none;
-  background-color: gray;
+  -moz-appearance: none;
+  height: 5px;
+  background-color: #ededed;
+  border: none;
+  outline: none;
+}
+.range-container input[type=range]::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  height: 15px;
+  width: 15px;
+  background-color: #2980b9;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.range-container .current-value .val {
+  display: inline;
+  position: relative;
+  left: 70%;
+}
+.range-container .current-value .val span {
+  font-size: 14px;
+  text-align: center;
+  position: relative;
+  background-color: #898989;
+  border-radius: 4px;
+  padding: 5px;
+  overflow: hidden;
+  width: 10px;
+  height: 10px;
+}
+.range-container .current-value .val .arrow {
+  display: inline-block;
+  position: relative;
+  border: 1px solid #898989;
+  background-color: #898989;
+  border-left: none;
+  border-top: none;
+  transform: rotate(45deg);
+  width: 9px;
+  height: 9px;
+  left: -23px;
+  bottom: -12px;
 }
