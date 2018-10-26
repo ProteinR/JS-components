@@ -66,6 +66,10 @@ $(".slider-container").mousedown(function (e) {
     });
 });
 
+
+
+
+
 $(".slider-container").mouseup(function () {
     console.log('mose up');
     clickFlag = false;
