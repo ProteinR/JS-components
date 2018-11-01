@@ -64,6 +64,7 @@ body {
         height: 100%;
         overflow: hidden;
         float: left;
+        z-index: 5;
         position: absolute;
         top: 0;
         left: 0;
@@ -81,6 +82,13 @@ body {
         height: 100%;
         flex-grow: 1;
         overflow: hidden;
+        position: relative;
+        z-index: 4;
+        right: -5px;
+        //        left: 0;
+        //        top: 0;
+        //        bottom: 0;
+        //        left: 0;
 
         img {
             height: 100%;
@@ -95,6 +103,7 @@ body {
         left: -50%;
         box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.8), 0 4px 15px 0 rgba(0, 0, 0, 0.55);
         cursor: pointer;
+        z-index: 995;
 
         &:after {
             content: "";
