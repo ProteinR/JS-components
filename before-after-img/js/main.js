@@ -24,9 +24,9 @@ $('.before-after-wrapper').mousedown(function (e) {
                 $('.line').css('left', line_pos + distance_procent + '%');
             }
         }
-    })
+    });
 });
 
 $('.before-after-wrapper').mouseup(function () {
     flag = false;
-})
+});
