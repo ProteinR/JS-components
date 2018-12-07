@@ -5,7 +5,7 @@ $('input[type="range"]').mousemove(function () {
 
 
     $('.current-value > .val > span').html(rangeVal);
-    $('.current-value > .val').css('left', rangeVal - 5 + '%');
+    $('.current-value > .val').css('left', rangeVal + '%');
 
     if (rangeVal < 10) {
         arrow.css('left', '-19px');

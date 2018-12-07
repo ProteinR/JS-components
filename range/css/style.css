@@ -62,7 +62,7 @@ body {
 .range-container .current-value .val {
   display: inline;
   position: relative;
-  left: 70%;
+  left: 65%;
 }
 .range-container .current-value .val span {
   font-size: 14px;
